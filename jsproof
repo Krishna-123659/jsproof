@@ -1,0 +1,37 @@
+let NFTs = [];
+
+function mintNFT(_name, _eyecolor, _shirttype, _bling) { 
+    let NFT= {
+        "name": _name,
+        "eyecolor": _eyecolor,
+        "shirttype": _shirttype,
+        "bling": _bling
+    }
+    NFTs.push(NFT);
+    console.log("Minted: " + _name);
+}
+
+function listNFTs() {
+    for (let i = 0; i < NFTs.length; i++) {
+        console.log("ID: \t\t" + (i + 1)); // Assuming ID is the index + 1
+        console.log("Name: \t\t" + NFTs[i].name);
+        console.log("Eyecolor: \t" + NFTs[i].eyecolor);
+        console.log("Shirttype: \t" + NFTs[i].shirttype);
+        console.log("Bling: \t\t" + NFTs[i].bling);
+        console.log(""); // Add a blank line for better separation between NFTs
+    }
+}
+
+function getTotalSupply() {
+    console.log("Total Supply: " + NFTs.length);
+}
+
+// Mint some NFTs
+mintNFT("bob", "blue", "hoodie", "gold chain");
+mintNFT("sue", "blue", "hoodie", "gold chain");
+mintNFT("tim", "blue", "hoodie", "gold chain");
+mintNFT("john", "blue", "hoodie", "gold chain");
+
+// List NFTs and get total supply
+listNFTs();
+getTotalSupply();
